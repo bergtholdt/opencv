@@ -3119,7 +3119,7 @@ void OpenGlViewPort::updateGl()
 
 void OpenGlViewPort::initializeGL()
 {
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+    glHint(GL_DONT_CARE, GL_NICEST);
 }
 
 void OpenGlViewPort::resizeGL(int w, int h)

@@ -26,6 +26,11 @@ from sphinx.util.nodes import make_refnode
 from sphinx.util.compat import Directive
 from sphinx.util.docfields import Field, GroupedField, TypedField
 
+import sys
+PY3 = sys.version_info.major == 3
+if PY3:
+    unicode = str
+
 ########################### Python Part ###########################
 
 # REs for Python signatures
@@ -1243,7 +1248,7 @@ class OCVObject(ObjectDescription):
         try:
             rv = self.parse_definition(parser)
             parser.assert_end()
-        except DefinitionError, e:
+        except DefinitionError as e:
             self.env.warn(self.env.docname,
                           e.description, self.lineno)
             raise ValueError
@@ -1449,7 +1454,7 @@ class OCVCurrentNamespace(Directive):
             try:
                 prefix = parser.parse_type()
                 parser.assert_end()
-            except DefinitionError, e:
+            except DefinitionError as e:
                 self.env.warn(self.env.docname,
                               e.description, self.lineno)
             else:
