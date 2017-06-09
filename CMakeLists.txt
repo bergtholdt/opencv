@@ -379,7 +379,7 @@ endif()
 
 if(WIN32 AND CMAKE_HOST_SYSTEM_NAME MATCHES Windows)
   if(DEFINED OpenCV_RUNTIME AND DEFINED OpenCV_ARCH)
-    ocv_update(OpenCV_INSTALL_BINARIES_PREFIX "${OpenCV_ARCH}/${OpenCV_RUNTIME}/")
+    ocv_update(OpenCV_INSTALL_BINARIES_PREFIX "")
   else()
     message(STATUS "Can't detect runtime and/or arch")
     ocv_update(OpenCV_INSTALL_BINARIES_PREFIX "")
