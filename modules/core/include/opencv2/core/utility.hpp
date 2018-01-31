@@ -55,6 +55,7 @@
 
 #include "opencv2/core.hpp"
 #include <ostream>
+#include <stdint.h>
 
 #ifdef CV_CXX11
 #include <functional>
