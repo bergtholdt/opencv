@@ -407,6 +407,7 @@ if(ANDROID)
   ocv_update(OPENCV_OTHER_INSTALL_PATH   sdk/etc)
 else()
   set(LIBRARY_OUTPUT_PATH                "${OpenCV_BINARY_DIR}/lib")
+  set(LIB_SUFFIX "")
   ocv_update(3P_LIBRARY_OUTPUT_PATH      "${OpenCV_BINARY_DIR}/3rdparty/lib${LIB_SUFFIX}")
 
   if(WIN32 AND CMAKE_HOST_SYSTEM_NAME MATCHES Windows)
